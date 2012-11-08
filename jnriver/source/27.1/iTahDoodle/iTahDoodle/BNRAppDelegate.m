@@ -67,9 +67,9 @@ NSString *docPaht()
     
     // 添加测试数据
     if([tasks count] == 0){
-        [tasks addObject:@"Walk the dods"];
-        [tasks addObject:@"Feed the dods"];
-        [tasks addObject:@"Chop the dods"];
+        [tasks addObject:@"Walk the dogs"];
+        [tasks addObject:@"Feed the dogs"];
+        [tasks addObject:@"Chop the dogs"];
     }
     
     // 创建并设置UIWindow实例
