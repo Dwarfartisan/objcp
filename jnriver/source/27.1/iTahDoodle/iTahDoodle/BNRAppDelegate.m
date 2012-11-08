@@ -43,7 +43,8 @@ NSString *docPaht()
 {
     NSString *t = [taskField text];
     
-    if([t isEqualToString:@""]){
+    if([t isEqualToString:@""] || t == nil){
+        [taskField resignFirstResponder];
         return;
     }
     
@@ -53,6 +54,19 @@ NSString *docPaht()
     [taskField resignFirstResponder];
 }
 
+// 删除task
+- (void)removeTask:(id)sender
+{
+    NSString *t = [taskField text];
+    
+    if([t isEqualToString:@""] || t == nil){
+        [taskField resignFirstResponder];
+        return;
+    }
+    
+    [tasks removeObject:@""];
+    [taskTable reloadData];
+}
 
 // 初始化
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -93,6 +107,8 @@ NSString *docPaht()
     taskField =[[UITextField alloc] initWithFrame:fieldFrame];
     [taskField setBorderStyle:UITextBorderStyleRoundedRect];
     [taskField setPlaceholder:@"Type a task, tap Insert"];
+    
+    
     
     // 创建并设置UIBtn对象
     insertBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
