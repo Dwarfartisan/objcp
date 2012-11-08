@@ -55,17 +55,20 @@ NSString *docPaht()
 }
 
 // 删除task
-- (void)removeTask:(id)sender
+- (void)removeTask:(NSUInteger) index
 {
-    NSString *t = [taskField text];
-    
-    if([t isEqualToString:@""] || t == nil){
-        [taskField resignFirstResponder];
-        return;
-    }
+    NSLog(@"delete :%d",index);
+    [tasks removeObjectAtIndex:index];
     
     [tasks removeObject:@""];
     [taskTable reloadData];
+}
+
+// 滑动删除
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSUInteger index = [indexPath indexAtPosition:1];
+    [self removeTask:index];
 }
 
 // 初始化
@@ -100,21 +103,20 @@ NSString *docPaht()
     taskTable = [[UITableView alloc] initWithFrame:tableFrame
                                              style:UITableViewStylePlain];
     [taskTable setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-    
     [taskTable setDataSource:self];
+    
+    // 滑动删除
     
     // 创建并设置UITextField对象
     taskField =[[UITextField alloc] initWithFrame:fieldFrame];
     [taskField setBorderStyle:UITextBorderStyleRoundedRect];
     [taskField setPlaceholder:@"Type a task, tap Insert"];
     
-    
-    
     // 创建并设置UIBtn对象
     insertBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [insertBtn setFrame:buttonFrame];
     
-    // btn回调
+    // btn点击回调
     [insertBtn addTarget:self action:@selector(addTask:) forControlEvents:UIControlEventTouchUpInside];
     [insertBtn setTitle:@"Insert" forState:UIControlStateNormal];
     
