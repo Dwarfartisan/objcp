@@ -1,0 +1,236 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7B405F571648F9860059F3B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B405F561648F9860059F3B8 /* Foundation.framework */; };
+		7B405F5A1648F9860059F3B8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B405F591648F9860059F3B8 /* main.m */; };
+		7B405F5E1648F9860059F3B8 /* ImageFetch.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7B405F5D1648F9860059F3B8 /* ImageFetch.1 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7B405F501648F9860059F3B8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				7B405F5E1648F9860059F3B8 /* ImageFetch.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		7B405F521648F9860059F3B8 /* ImageFetch */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ImageFetch; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B405F561648F9860059F3B8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7B405F591648F9860059F3B8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7B405F5C1648F9860059F3B8 /* ImageFetch-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ImageFetch-Prefix.pch"; sourceTree = "<group>"; };
+		7B405F5D1648F9860059F3B8 /* ImageFetch.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = ImageFetch.1; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7B405F4F1648F9860059F3B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B405F571648F9860059F3B8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7B405F471648F9860059F3B8 = {
+			isa = PBXGroup;
+			children = (
+				7B405F581648F9860059F3B8 /* ImageFetch */,
+				7B405F551648F9860059F3B8 /* Frameworks */,
+				7B405F531648F9860059F3B8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7B405F531648F9860059F3B8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7B405F521648F9860059F3B8 /* ImageFetch */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7B405F551648F9860059F3B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B405F561648F9860059F3B8 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7B405F581648F9860059F3B8 /* ImageFetch */ = {
+			isa = PBXGroup;
+			children = (
+				7B405F591648F9860059F3B8 /* main.m */,
+				7B405F5D1648F9860059F3B8 /* ImageFetch.1 */,
+				7B405F5B1648F9860059F3B8 /* Supporting Files */,
+			);
+			path = ImageFetch;
+			sourceTree = "<group>";
+		};
+		7B405F5B1648F9860059F3B8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7B405F5C1648F9860059F3B8 /* ImageFetch-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7B405F511648F9860059F3B8 /* ImageFetch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B405F611648F9860059F3B8 /* Build configuration list for PBXNativeTarget "ImageFetch" */;
+			buildPhases = (
+				7B405F4E1648F9860059F3B8 /* Sources */,
+				7B405F4F1648F9860059F3B8 /* Frameworks */,
+				7B405F501648F9860059F3B8 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ImageFetch;
+			productName = ImageFetch;
+			productReference = 7B405F521648F9860059F3B8 /* ImageFetch */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7B405F491648F9860059F3B8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 7B405F4C1648F9860059F3B8 /* Build configuration list for PBXProject "ImageFetch" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7B405F471648F9860059F3B8;
+			productRefGroup = 7B405F531648F9860059F3B8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7B405F511648F9860059F3B8 /* ImageFetch */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7B405F4E1648F9860059F3B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B405F5A1648F9860059F3B8 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		7B405F5F1648F9860059F3B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		7B405F601648F9860059F3B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		7B405F621648F9860059F3B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ImageFetch/ImageFetch-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7B405F631648F9860059F3B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ImageFetch/ImageFetch-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7B405F4C1648F9860059F3B8 /* Build configuration list for PBXProject "ImageFetch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B405F5F1648F9860059F3B8 /* Debug */,
+				7B405F601648F9860059F3B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7B405F611648F9860059F3B8 /* Build configuration list for PBXNativeTarget "ImageFetch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B405F621648F9860059F3B8 /* Debug */,
+				7B405F631648F9860059F3B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7B405F491648F9860059F3B8 /* Project object */;
+}
