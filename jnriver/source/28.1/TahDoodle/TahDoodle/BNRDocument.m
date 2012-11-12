@@ -21,10 +21,12 @@
 {
     if(!todoItems){
         todoItems = [NSMutableArray array];
+        [todoItems retain];
     }
     [todoItems addObject:@"New Item"];
     
-//    NSLog(@"todoItems:\n%@",todoItems);
+    NSLog(@"todoItems:\n%@",todoItems);
+
     // reloadData 刷新
     [itemTableView reloadData];
     
