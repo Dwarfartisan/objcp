@@ -51,7 +51,6 @@
     [self updateChangeCount:NSChangeDone];
 }
 
-/*
 - (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError
 {
     if(!todoItems){
@@ -77,5 +76,5 @@
     
     return (todoItems != nil);
 }
-*/
+
 @end
