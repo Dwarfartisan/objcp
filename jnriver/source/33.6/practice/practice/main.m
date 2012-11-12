@@ -1,6 +1,6 @@
 //
 //  main.m
-//  33.6
+//  practice
 //
 //  Created by nangua on 12-11-12.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
@@ -20,9 +20,10 @@ int main(int argc, const char * argv[])
                 n++;
             }
         }
-
+        
         // 0101010101010101010101010101010101010101010101010101010101010101
         NSLog(@"n:%lld",n);
+        
     }
     return 0;
 }
