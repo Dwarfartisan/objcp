@@ -25,8 +25,20 @@
     }
     [todoItems addObject:@"New Item"];
     
-    NSLog(@"todoItems:\n%@",todoItems);
+//    NSLog(@"todoItems:\n%@",todoItems);
 
+    // reloadData 刷新
+    [itemTableView reloadData];
+    
+    [self updateChangeCount:NSChangeDone];
+}
+- (IBAction)deleteItem:(id)sender
+{
+    if(!todoItems || [todoItems count] == 0){
+        return;
+    }
+    [todoItems removeLastObject];
+    
     // reloadData 刷新
     [itemTableView reloadData];
     
@@ -56,7 +68,8 @@
 - (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError
 {
     if(!todoItems){
-        todoItems = [NSMutableArray array];
+        todoItems = [NSMutableArray array];        
+        [todoItems retain];
     }
     
     // 将todoItems 转化为NSData对象
@@ -68,7 +81,9 @@
 }
 
 - (BOOL)readFromData:(NSData *)data ofType:(NSString *)typeName error:(NSError **)outError
-{
+{        
+    todoItems = [NSMutableArray array];        
+    [todoItems retain];
     // 将NSData对象 转化回todoItems
     todoItems = [NSPropertyListSerialization
                  propertyListWithData:data
