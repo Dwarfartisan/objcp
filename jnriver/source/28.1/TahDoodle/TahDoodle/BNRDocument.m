@@ -23,7 +23,7 @@
         todoItems = [NSMutableArray array];
         [todoItems retain];
     }
-    [todoItems addObject:@"New Item"];
+    [todoItems addObject:[NSString localizedStringWithFormat:@"New Item %d",[todoItems count] + 1]];
     
 //    NSLog(@"todoItems:\n%@",todoItems);
 
@@ -32,17 +32,27 @@
     
     [self updateChangeCount:NSChangeDone];
 }
+
 - (IBAction)deleteItem:(id)sender
 {
     if(!todoItems || [todoItems count] == 0){
         return;
     }
-    [todoItems removeLastObject];
-    
+    NSInteger i = [itemTableView selectedRow];
+
+    if(i >= 0){
+        [todoItems removeObjectAtIndex:i];
+    }else {
+        return;
+    }
     // reloadData 刷新
     [itemTableView reloadData];
     
-    [self updateChangeCount:NSChangeDone];
+    if([todoItems count] == 0){// 无数据时不需保存
+        [self updateChangeCount:NSChangeCleared];
+    }else {
+        [self updateChangeCount:NSChangeDone];
+    }
 }
 
 #pragma 数据源方法
@@ -68,22 +78,20 @@
 - (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError
 {
     if(!todoItems){
-        todoItems = [NSMutableArray array];        
-        [todoItems retain];
+        todoItems = [NSMutableArray array];
     }
     
     // 将todoItems 转化为NSData对象
     NSData *data = [NSPropertyListSerialization 
                     dataWithPropertyList:todoItems
                                   format:NSPropertyListBinaryFormat_v1_0 
-                                 options:0 error:outError];
+                                 options:0 
+                                   error:outError];
     return data;
 }
 
 - (BOOL)readFromData:(NSData *)data ofType:(NSString *)typeName error:(NSError **)outError
-{        
-    todoItems = [NSMutableArray array];        
-    [todoItems retain];
+{
     // 将NSData对象 转化回todoItems
     todoItems = [NSPropertyListSerialization
                  propertyListWithData:data
@@ -91,6 +99,8 @@
                                format:NULL 
                                 error:outError];
     
+    [todoItems retain];
+//    NSLog(@"todoItems:\n%@",todoItems);
     return (todoItems != nil);
 }
 
