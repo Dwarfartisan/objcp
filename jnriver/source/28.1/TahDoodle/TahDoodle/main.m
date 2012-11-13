@@ -2,7 +2,7 @@
 //  main.m
 //  TahDoodle
 //
-//  Created by nangua on 12-11-7.
+//  Created by nangua on 12-11-9.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
