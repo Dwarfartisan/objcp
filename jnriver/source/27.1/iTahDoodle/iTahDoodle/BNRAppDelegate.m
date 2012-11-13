@@ -43,7 +43,8 @@ NSString *docPaht()
 {
     NSString *t = [taskField text];
     
-    if([t isEqualToString:@""]){
+    if([t isEqualToString:@""] || t == nil){
+        [taskField resignFirstResponder];
         return;
     }
     
@@ -53,6 +54,22 @@ NSString *docPaht()
     [taskField resignFirstResponder];
 }
 
+// 删除task
+- (void)removeTask:(NSUInteger) index
+{
+    NSLog(@"delete :%d",index);
+    [tasks removeObjectAtIndex:index];
+    
+    [tasks removeObject:@""];
+    [taskTable reloadData];
+}
+
+// 滑动删除
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSUInteger index = [indexPath indexAtPosition:1];
+    [self removeTask:index];
+}
 
 // 初始化
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -67,9 +84,9 @@ NSString *docPaht()
     
     // 添加测试数据
     if([tasks count] == 0){
-        [tasks addObject:@"Walk the dods"];
-        [tasks addObject:@"Feed the dods"];
-        [tasks addObject:@"Chop the dods"];
+        [tasks addObject:@"Walk the dogs"];
+        [tasks addObject:@"Feed the dogs"];
+        [tasks addObject:@"Chop the dogs"];
     }
     
     // 创建并设置UIWindow实例
@@ -86,8 +103,9 @@ NSString *docPaht()
     taskTable = [[UITableView alloc] initWithFrame:tableFrame
                                              style:UITableViewStylePlain];
     [taskTable setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-    
     [taskTable setDataSource:self];
+    
+    // 滑动删除
     
     // 创建并设置UITextField对象
     taskField =[[UITextField alloc] initWithFrame:fieldFrame];
@@ -98,7 +116,7 @@ NSString *docPaht()
     insertBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [insertBtn setFrame:buttonFrame];
     
-    // btn回调
+    // btn点击回调
     [insertBtn addTarget:self action:@selector(addTask:) forControlEvents:UIControlEventTouchUpInside];
     [insertBtn setTitle:@"Insert" forState:UIControlStateNormal];
     

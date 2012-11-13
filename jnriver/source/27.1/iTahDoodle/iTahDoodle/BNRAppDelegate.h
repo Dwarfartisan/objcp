@@ -20,6 +20,8 @@ NSString *docPath(void);
 }
 
 - (void) addTask:(id)sender;
+- (void) removeTask:(NSUInteger)index;
+
 
 @property (strong, nonatomic) UIWindow *window;
 
